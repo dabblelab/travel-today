@@ -1,0 +1,268 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "travel today",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "TravelTodayIntent",
+          "slots": [
+            {
+              "name": "toCity",
+              "type": "places",
+              "samples": [
+                "I\u0027m planning to go to {toCity}",
+                "to {toCity}"
+              ]
+            },
+            {
+              "name": "fromCity",
+              "type": "places",
+              "samples": [
+                "i would like to start from {fromCity}",
+                "i would like to go from {fromCity}",
+                "{fromCity}"
+              ]
+            }
+          ],
+          "samples": [
+            "i would like to go from {fromCity}",
+            "i would like to go to {toCity} from {fromCity}",
+            "{toCity}",
+            "{fromCity}"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "id": "10",
+              "name": {
+                "value": "gj",
+                "synonyms": [
+                  "gujarat"
+                ]
+              }
+            },
+            {
+              "id": "9",
+              "name": {
+                "value": "pb",
+                "synonyms": [
+                  "land of five waters",
+                  "Punjab"
+                ]
+              }
+            },
+            {
+              "id": "8",
+              "name": {
+                "value": "ga",
+                "synonyms": [
+                  "pearl of orient",
+                  "goa"
+                ]
+              }
+            },
+            {
+              "id": "7",
+              "name": {
+                "value": "krl",
+                "synonyms": [
+                  "god\u0027s own country",
+                  "the jewel of south india",
+                  "land of trees",
+                  "land of coconuts",
+                  "spice garden of india",
+                  "kerala"
+                ]
+              }
+            },
+            {
+              "id": "6",
+              "name": {
+                "value": "blr",
+                "synonyms": [
+                  "garden city",
+                  "bengaluru",
+                  "bangalore"
+                ]
+              }
+            },
+            {
+              "id": "5",
+              "name": {
+                "value": "ci",
+                "synonyms": [
+                  "gateway to south india",
+                  "madras",
+                  "chennai"
+                ]
+              }
+            },
+            {
+              "id": "4",
+              "name": {
+                "value": "dl",
+                "synonyms": [
+                  "Lutyens\u0027 Delhi",
+                  "Delhi",
+                  "delhi"
+                ]
+              }
+            },
+            {
+              "id": "3",
+              "name": {
+                "value": "jr",
+                "synonyms": [
+                  "pink city",
+                  "pinkcity",
+                  "jaipur"
+                ]
+              }
+            },
+            {
+              "id": "1",
+              "name": {
+                "value": "mi",
+                "synonyms": [
+                  "Maharashtra",
+                  "Bombay",
+                  "Mumbai"
+                ]
+              }
+            },
+            {
+              "id": "2",
+              "name": {
+                "value": "kl",
+                "synonyms": [
+                  "howrah",
+                  "Bengal",
+                  "Calcutta",
+                  "Kolkata"
+                ]
+              }
+            }
+          ],
+          "name": "places"
+        }
+      ],
+      "modelConfiguration": {
+        "fallbackIntentSensitivity": {
+          "level": "LOW"
+        }
+      }
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "TravelTodayIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "toCity",
+              "type": "places",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.297240814607.490364231664"
+              }
+            },
+            {
+              "name": "fromCity",
+              "type": "places",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.297240814607.1122358034780"
+              }
+            }
+          ],
+          "delegationStrategy": "ALWAYS"
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Confirm.Intent.297240814607",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "to {toCity}"
+          },
+          {
+            "type": "PlainText",
+            "value": "from {fromCity}"
+          },
+          {
+            "type": "PlainText",
+            "value": "i would like to go from {fromCity}"
+          },
+          {
+            "type": "PlainText",
+            "value": "i would like to go to {toCity}"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.297240814607.490364231664",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Okay, where are you planning to go?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Where would you like to go?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Where are you going?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.297240814607.1122358034780",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Where would you be leaving from?"
+          },
+          {
+            "type": "PlainText",
+            "value": "What would be your departure destination?"
+          },
+          {
+            "type": "PlainText",
+            "value": "From where would you like to go?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "15"
+}
